@@ -37,7 +37,7 @@ setup(
         "blend-modes",
         "fonttools",
         "imgaug",
-        "numpy",
+        "numpy==1.26.4",
         "opencv-python",
         "pillow>=8.2.0",
         "pygame",
