@@ -170,13 +170,16 @@ class TextLayer(Layer):
     def _get_bbox(self, text, font, vertical):
         direction = self._get_direction(vertical)
 
+        left, top, right, bottom = font.getbbox(text, direction=direction)
+        width = right - left
+        height = bottom - top
         if not vertical:
             ascent, descent = font.getmetrics()
-            width = font.getsize(text, direction=direction)[0]
+            #width = font.getsize(text, direction=direction)[0]
             height = ascent + descent
             bbox = [0, -ascent, width, height]
         else:
-            width, height = font.getsize(text, direction=direction)
+            #width, height = font.getsize(text, direction=direction)
             bbox = [-width // 2, 0, width, height]
 
         return bbox
