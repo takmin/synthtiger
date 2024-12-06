@@ -90,6 +90,12 @@ synthtiger -o results -w 4 -v examples/synthtiger/template.py SynthTiger example
 - `masks`: a directory containing mask images with text effect.
 - `glyph_masks`: a directory containing mask images without text effect.
 
+##### Generate Merged Bounding Box
+SynthTiger generates bounding box for each character.  You can merge these bounding boxes by using python script as below:
+```
+$ python mergebb.py gt.txt gt_merged.txt
+```
+
 #### Multiline text images
 
 ```bash
